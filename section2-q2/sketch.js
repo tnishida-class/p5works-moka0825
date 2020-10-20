@@ -23,17 +23,25 @@ function setup() {
     }
 
       console.log(i, j);
-      rect(size * i, size * j, size, size);
+      rect(25 * i, 25 * j, 25, 25);
 
-      for(let i = 0; i < 3; i++){
-        for(let j = 0; j < 8; j ++){
-          console.log(i, j);
-          ellipse(2*size*i+b, size*j+12.5);
-          b=(j % 2 == 1 ? 12.5 : 12.5+25)
-          fill(255, 0, 0)
+      fill(255, 0, 0);
+      for(let i = 0; i < 8; i++){
+        for(let j = 0; j < 3; j++){
+
+        b=(j % 2 == 1 ? 12.5 : 12.5+25)
+        ellipse(2*25*i+b, 25*j+12.5, 22);
+
         }
       }
+      fill(0);
+      for(let i = 0; i < 8; i++){
+        for(let j = 5; j < 9; j++){
 
+        b=(j % 2 == 1 ? 12.5 : 12.5+25)
+        ellipse(2*25*i+b, 25*j+12.5, 22);
+        }
+      }
       // BLANK[1] (hint: rectのx座標は size * i, y座標はsize * j)
     }
   }
