@@ -36,7 +36,7 @@ function setup() {
       }
       fill(0);
       for(let i = 0; i < 8; i++){
-        for(let j = 5; j < 9; j++){
+        for(let j = 5; j < 8; j++){
 
         b=(j % 2 == 1 ? 12.5 : 12.5+25)
         ellipse(2*25*i+b, 25*j+12.5, 22);
