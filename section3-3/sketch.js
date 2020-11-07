@@ -49,8 +49,35 @@ function dayOfYear(y, m, d){
 }
 
 function dayOfWeek(y, m, d){
-  // BLANK[2]
+ let count = 0;
+  for(let i = 1970; i < y; i++){
+   count += daysInYear(i);
+  }
+   count += dayOfYear(y, m, d);
+
+ if(count % 7 - 3 == 0){
+   console.log("日");
+ }
+   else if(count % 7 - 3 == 1){
+      console.log("月");
+    }
+      else if(count % 7 - 3 == 2){
+        console.log("火");
+      }
+        else if(count % 7 - 3 == 3){
+          console.log("水");
+        }
+          else if(count % 7 + 4 == 4){
+            console.log("木");
+          }
+            else if(count % 7 + 4 == 5){
+              console.log("金");
+            }
+             else{
+               console.log("土");
+             }
 }
+
 
 function dayOfWeekAsString(dow){
   const a = ["日", "月", "火", "水", "木", "金", "土", "日"];
