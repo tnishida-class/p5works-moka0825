@@ -4,8 +4,7 @@
 function setup(){
   createCanvas(400, 400);
   background(255);
-  regularPolygon(3, 130, 16, 20);
-  balloon("I love keyakizaka46", 30, 40);
+  balloon("I love Kobe");
 
 }
 
@@ -13,22 +12,21 @@ function setup(){
 function balloon(t, x, y){
   let w = textWidth(t);
   let h = textAscent() + textDescent();
-  let p = 2;
-  fill(0);
-  rect(0, 0, w + p * 10, h + p * 10);
-  fill(255);
-  text(t, p, h + p);
-}
+  let p = 50;
+  let r = 10;
 
-function regularPolygon(n, cx, cy, r){
-  beginShape();
-  for(var i = 0; i < 5; i++){
-    let theta = TWO_PI * i / n - HALF_PI;
-    let x = cx + cos(theta) * r;
-    let y = cy + sin(theta) * r;
-    fill(0);
-    vertex(x,y);
-  }
+  fill(0);
+  rect(r,r, w + p * 2, h + p * 2);
+  fill(255);
+  textSize(20);
+  textFont("gothic");
+  text(t, p * 0.5 + r, h + p + r * 0.5);
+
+
+  fill(0);
+  triangle((w + p * 2)* 0.6, h + p * 2 + r,
+  (w + p * 2)* 0.9, h + p * 2 + r,
+  (w + p * 2)* 1, (h + p * 2 + r)* 1.3);
 
   endShape(CLOSE);
   }

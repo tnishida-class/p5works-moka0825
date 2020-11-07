@@ -32,5 +32,15 @@ function star(cx, cy, r){
     let y = cy + sin(theta) * r;
     vertex(x,y);
   }
+
+
+function regularPolygon(n, cx, cy, r){
+  beginShape();
+  for(var i = 0; i < 5; i++){
+    let theta = TWO_PI * i / n - HALF_PI;
+    let x = cx + cos(theta) * r;
+    let y = cy + sin(theta) * r;
+    vertex(x,y);
+  }
   endShape(CLOSE);
 }
